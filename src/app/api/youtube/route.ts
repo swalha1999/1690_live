@@ -1,17 +1,9 @@
 import { NextResponse } from 'next/server';
 
-if (!process.env.YOUTUBE_API_KEY) {
-	throw new Error('YOUTUBE_API_KEY is not configured in environment variables');
-}
+
 
 export async function GET() {
 	try {
-		if (!process.env.YOUTUBE_VIDEO_ID) {
-			return NextResponse.json(
-				{ error: 'YOUTUBE_VIDEO_ID is not configured' },
-				{ status: 400 }
-			);
-		}
 
 		const response = await fetch(
 			`https://www.googleapis.com/youtube/v3/videos?part=statistics&id=Tnl4hQlI1Gc&key=AIzaSyAL3pVItelo_9D50Wbgrm1_HNLRCRgZ0fk`
