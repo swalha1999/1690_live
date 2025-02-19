@@ -37,10 +37,10 @@ export async function GET() {
 			title: video.snippet?.title,
 			thumbnail: video.snippet?.thumbnails?.standard?.url
 		});
-	} catch (error: any) {
+	} catch (error: unknown) {
 		console.error('YouTube API Error:', error);
 		
-		if (error.message?.includes('API key not valid')) {
+		if (error instanceof Error && error.message?.includes('API key not valid')) {
 			return NextResponse.json(
 				{ error: 'Invalid YouTube API key' },
 				{ status: 401 }

@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 interface VideoStats {
 	statistics: {
@@ -94,7 +94,7 @@ export default function Home() {
 		fetchStats();
 		const interval = setInterval(fetchStats, 10000); // Update every 10 seconds
 		return () => clearInterval(interval);
-	}, []);
+	}, [stats]);
 
 	if (loading) {
 		return (
@@ -129,6 +129,13 @@ export default function Home() {
 				animate={{ opacity: 1, y: 0 }}
 				className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden"
 			>
+				<motion.h1
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					className="text-3xl font-bold text-center p-6 text-gray-800"
+				>
+					FRC team 1690 Orbit 2025 robot reveal - &ldquo;WHISPER&rdquo;
+				</motion.h1>
 				{stats?.thumbnail && (
 					<div className="relative pt-[56.25%]">
 						<motion.img
