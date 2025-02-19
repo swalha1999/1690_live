@@ -202,6 +202,13 @@ export default function Home() {
 					>
 						Wishing Team 1690 Back-to-Back World Championships! 🏆🌟
 					</motion.div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						className="text-center mt-3 text-sm text-purple-600"
+					>
+						Thanks from 6168 & Muhammad! 💫
+					</motion.div>
 				</motion.div>
 			</motion.div>
 		</main>
