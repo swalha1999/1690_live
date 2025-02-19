@@ -195,6 +195,13 @@ export default function Home() {
 							color="text-purple-600"
 						/>
 					</motion.div>
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						className="text-center mt-6 text-xl font-bold text-blue-600"
+					>
+						Wishing Team 1690 Back-to-Back World Championships! 🏆🌟
+					</motion.div>
 				</motion.div>
 			</motion.div>
 		</main>
